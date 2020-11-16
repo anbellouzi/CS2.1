@@ -10,8 +10,8 @@ def is_sorted(items):
         return True
     
     prev = items[0]
-    for i in range(1, len(items)):
-        if prev > items[i]:
+    for i in range(1, len(items)):   # O(n)
+        if prev > items[i]:          # O(1)
             return False
         prev = items[i]
     return True
@@ -26,7 +26,7 @@ def bubble_sort(items):
     # TODO: Swap adjacent items that are out of order
     num_items = len(items)
     # loop over items from 0 to length of items
-    for i in range(num_items-1):
+    for i in range(num_items-1):                        
         # loop over items from 0 to i minus 1 for comparing
         for j in range(0, num_items-i-1):
             # check if second to last item is greater than last item
@@ -46,7 +46,7 @@ def selection_sort(items):
     # TODO: Swap it with first unsorted item
     num = len(items)
     
-    for i in range(num):
+    for i in range(num):                    # O(n^2)
         for j in range(i, num):
             if items[i] > items[j]:
                 (items[i], items[j]) = (items[j], items[i])
@@ -101,15 +101,15 @@ if __name__ == '__main__':
     print("Insertion sort list1: {}".format(insertion_sort1))
     print("Insertion sort list2: {}".format(insertion_sort2))
     
-    # start = time.time()
-    # result = is_sorted(sorted_items)
-    # end = time.time()
-    # print(sorted_items)
-    # print("Sorted: {}. Time: {}\n".format(result, (end-start)))
+    start = time.time()
+    result = is_sorted(sorted_items)
+    end = time.time()
+    print(sorted_items)
+    print("Sorted: {}. Time: {}\n".format(result, (end-start)))
     
 
-    # start = time.time()
-    # result = is_sorted(unsorted_items)
-    # end = time.time()
-    # print(unsorted_items)
-    # print("Sorted: {}. Time: {}".format(result, (end-start)))
+    start = time.time()
+    result = is_sorted(unsorted_items)
+    end = time.time()
+    print(unsorted_items)
+    print("Sorted: {}. Time: {}".format(result, (end-start)))

@@ -82,11 +82,11 @@ def merge_sort(items):
             i += 1
             
     return items
-
+# time complexity: O(n*Log n)
 
 def partition(items, low, high):
     """Return index `p` after in-place partitioning given items in range
-    `[low...high]` by choosing a pivot (TODO: document your method here) from
+    `[low...high]` by choosing a pivot (TODO: high index) from
     that range, moving pivot into index `p`, items less than pivot into range
     `[low...p-1]`, and items greater than pivot into range `[p+1...high]`.
     TODO: Running time: ??? Why and under what conditions?
